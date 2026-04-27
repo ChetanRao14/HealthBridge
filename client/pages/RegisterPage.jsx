@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext.jsx';
 import { City, Country, State } from 'country-state-city';
+import { DobInput } from '../components/DobInput.jsx';
 
 const SPECIALIZATION_OPTIONS = [
   'Anesthesiologist',
@@ -220,11 +221,11 @@ export default function RegisterPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <div>
               <label className="text-sm text-slate-700">Date of Birth</label>
-              <input className="hb-input mt-1" type="date" value={dob} onChange={(e) => setDob(e.target.value)} />
+              <DobInput value={dob} onChange={(e) => setDob(e.target.value)} />
             </div>
             <div>
               <label className="text-sm text-slate-700">Age</label>
-              <input className="hb-input mt-1" type="number" min="0" max="130" value={age} onChange={(e) => setAge(e.target.value)} placeholder="Optional" />
+              <input className="hb-input mt-1" type="number" min="0" max="130" value={age} onChange={(e) => setAge(e.target.value)} placeholder="Optional" onWheel={(e) => e.target.blur()} />
             </div>
           </div>
 
@@ -312,11 +313,11 @@ export default function RegisterPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <div>
                   <label className="text-sm text-slate-700">Experience (years)</label>
-                  <input className="hb-input mt-1" type="number" min="0" max="80" value={experienceYears} onChange={(e) => setExperienceYears(e.target.value)} placeholder="Optional" />
+                  <input className="hb-input mt-1" type="number" min="0" max="80" value={experienceYears} onChange={(e) => setExperienceYears(e.target.value)} placeholder="Optional" onWheel={(e) => e.target.blur()} />
                 </div>
                 <div>
                   <label className="text-sm text-slate-700">Consultation Fees</label>
-                  <input className="hb-input mt-1" type="number" min="0" value={consultationFees} onChange={(e) => setConsultationFees(e.target.value)} placeholder="Optional" />
+                  <input className="hb-input mt-1" type="number" min="0" value={consultationFees} onChange={(e) => setConsultationFees(e.target.value)} placeholder="Optional" onWheel={(e) => e.target.blur()} />
                 </div>
               </div>
 

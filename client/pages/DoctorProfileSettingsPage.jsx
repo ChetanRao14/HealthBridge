@@ -4,6 +4,7 @@ import { api } from '../services/api';
 import { City, Country, State } from 'country-state-city';
 import { getCountries, getCountryCallingCode, parsePhoneNumberFromString } from 'libphonenumber-js';
 import { useAuth } from '../context/AuthContext.jsx';
+import { DobInput } from '../components/DobInput.jsx';
 
 const TITLE_OPTIONS = ['Dr', 'Mr', 'Mrs', 'Ms', 'Mx'];
 
@@ -294,7 +295,7 @@ export default function DoctorProfileSettingsPage() {
 
           <div>
             <label className="text-sm text-slate-700">Date of Birth</label>
-            <input className="hb-input mt-1" type="date" value={dob} onChange={(e) => setDob(e.target.value)} />
+            <DobInput value={dob} onChange={(e) => setDob(e.target.value)} />
           </div>
 
           <div>

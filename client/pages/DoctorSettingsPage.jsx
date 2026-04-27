@@ -4,6 +4,7 @@ import { api } from '../services/api';
 import { City, Country, State } from 'country-state-city';
 import { getCountries, getCountryCallingCode, parsePhoneNumberFromString } from 'libphonenumber-js';
 import { useAuth } from '../context/AuthContext.jsx';
+import { DobInput } from '../components/DobInput.jsx';
 
 const SPECIALIZATION_OPTIONS = [
   'Anesthesiologist',
@@ -457,23 +458,18 @@ export default function DoctorSettingsPage() {
 
           <div>
             <label className="text-sm text-slate-700">Date of Birth</label>
-            <input
-              className="hb-input mt-1"
-              type="date"
-              value={dob}
-              onChange={(e) => setDob(e.target.value)}
-            />
+            <DobInput value={dob} onChange={(e) => setDob(e.target.value)} />
           </div>
 
           <div>
             <label className="text-sm text-slate-700">Age</label>
-            <input className="hb-input mt-1" type="number" min="0" max="130" value={age} onChange={(e) => setAge(e.target.value)} placeholder="Optional" />
+            <input className="hb-input mt-1" type="number" min="0" max="130" value={age} onChange={(e) => setAge(e.target.value)} placeholder="Optional" onWheel={(e) => e.target.blur()} />
             <div className="mt-1 text-xs text-slate-500">Age will be auto-calculated if DOB is set.</div>
           </div>
 
           <div>
             <label className="text-sm text-slate-700">Experience (Years)</label>
-            <input className="hb-input mt-1" type="number" min="0" max="80" value={experienceYears} onChange={(e) => setExperienceYears(e.target.value)} />
+            <input className="hb-input mt-1" type="number" min="0" max="80" value={experienceYears} onChange={(e) => setExperienceYears(e.target.value)} onWheel={(e) => e.target.blur()} />
           </div>
 
           <div>
@@ -573,6 +569,7 @@ export default function DoctorSettingsPage() {
               min="0"
               value={consultationFees}
               onChange={(e) => setConsultationFees(e.target.value)}
+              onWheel={(e) => e.target.blur()}
             />
           </div>
 

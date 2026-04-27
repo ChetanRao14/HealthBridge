@@ -244,7 +244,7 @@ export default function DoctorConsultationSettingsPage() {
         <form onSubmit={onSave} className="space-y-4">
           <div>
             <label className="text-sm text-slate-700">Experience (Years)</label>
-            <input className="hb-input mt-1" type="number" min="0" max="80" value={experienceYears} onChange={(e) => setExperienceYears(e.target.value)} />
+            <input className="hb-input mt-1" type="number" min="0" max="80" value={experienceYears} onChange={(e) => setExperienceYears(e.target.value)} onWheel={(e) => e.target.blur()} />
           </div>
 
           <div>
@@ -277,7 +277,7 @@ export default function DoctorConsultationSettingsPage() {
 
           <div>
             <label className="text-sm text-slate-700">Consultation Fee (₹)</label>
-            <input className="hb-input mt-1" type="number" min="0" value={consultationFees} onChange={(e) => setConsultationFees(e.target.value)} />
+            <input className="hb-input mt-1" type="number" min="0" value={consultationFees} onChange={(e) => setConsultationFees(e.target.value)} onWheel={(e) => e.target.blur()} />
           </div>
 
           <div>
