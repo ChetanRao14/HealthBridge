@@ -1,8 +1,6 @@
 <div align="center">
 
-<img src="./assets/banner.png" alt="HealthBridge" width="100%" />
 
-<br/>
 
 [![React](https://img.shields.io/badge/React-18.2.0-61DAFB?style=flat-square&logo=react&logoColor=black)](https://reactjs.org/)
 [![Node.js](https://img.shields.io/badge/Node.js-Express-339933?style=flat-square&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
